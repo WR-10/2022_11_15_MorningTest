@@ -1,4 +1,3 @@
-from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
@@ -14,4 +13,4 @@ class UserRegistrationAPIViewTestCase(APITestCase):
             "password" : "password",
         }
         response = self.client.post(url, user_data)
-        self.assertEqual(response.data, {"message": "가입 완료!!"})
+        self.assertEqual(response.data["message"], "가입 완료!!")
